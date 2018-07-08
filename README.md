@@ -34,6 +34,34 @@ python main.py
  - `project_tests.py`
  - Newest inference images from `runs` folder  (**all images from the most recent run**)
  
+ ### Results and Model Training 
+ 
+ #### Model training 
+ 
+ I trained the models twice , Once without freezing the layers and once by freezing the layers. For both the training the following paramters where used : 
+ **Batch size** :- 5 
+ **EPOCH** :- 50 
+ 
+ The model was trained on Google colab on GPU runtime (Tesla K80 GPU). 
+ 
+ The time taken to train is as follows : 
+ 1. **Without freezing layers** : 1 hour+ 
+ 2. **With freezing layers** :- 30 min approx 
+ 
+ ### Results 
+ 
+ We achieved better results by freezing the layers , This also helped in lower computational time. The output are as follows : 
+ 
+ #### No Freeze 
+ 
+ ![No freeze output](https://github.com/Shreyas3108/CarND-Segmentation-/blob/master/no_freeze/um_000034.png?raw=true)
+ 
+ #### Freeze 
+ 
+ ![Freeze output](https://github.com/Shreyas3108/CarND-Segmentation-/blob/master/freeze/um_000034%20(1).png?raw=true)  
+ 
+ As we can see that output achieved from Freeze is more accurate and does the job very well! 
+ 
  ### Tips
 - The link for the frozen `VGG16` model is hardcoded into `helper.py`.  The model can be found [here](https://s3-us-west-1.amazonaws.com/udacity-selfdrivingcar/vgg.zip)
 - The model is not vanilla `VGG16`, but a fully convolutional version, which already contains the 1x1 convolutions to replace the fully connected layers. Please see this [forum post](https://discussions.udacity.com/t/here-is-some-advice-and-clarifications-about-the-semantic-segmentation-project/403100/8?u=subodh.malgonde) for more information.  A summary of additional points, follow. 
@@ -45,4 +73,10 @@ If you are unfamiliar with GitHub , Udacity has a brief [GitHub tutorial](http:/
 
 To learn about REAMDE files and Markdown, Udacity provides a free [course on READMEs](https://www.udacity.com/courses/ud777), as well. 
 
-GitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files.
+GitHub also provides a [tutorial](https://guides.github.com/features/mastering-markdown/) about creating Markdown files. 
+
+### References 
+
+1.  Walkthrough video Udacity SDC Semantic Segmentation 
+2.  https://medium.com/@subodh.malgonde/transfer-learning-using-tensorflow-52a4f6bcde3e 
+3.  Teammate :- Andreas Graf 
